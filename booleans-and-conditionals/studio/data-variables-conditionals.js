@@ -19,55 +19,73 @@ let preparedForLiftOff = true;
 // add logic below to verify total number of astronauts for shuttle launch does not exceed 7
 
 if (astronautCount <= 7){
+    preparedForLiftOff == true
     console.log("Ready for Launch");
 } else {
-    console.log("Cannot proceed with launch");
+    preparedForLiftOff == false
+    console.log("Not Ready for launch");
 }
 
 // add logic below to verify all astronauts are ready
 
-if (!astronautStatus == "ready"){
-    console.log("Not ready for Launch!");
+if (astronautStatus == "ready"){
+    preparedForLiftOff == true
+    console.log("All Astronauts are Ready for Launch");
 } else {
-    console.log("Ready for Launch");
+    preparedForLiftOff == false
+    console.log("All Astronauts are not ready!");
 }
 
 // add logic below to verify the total mass does not exceed the maximum limit of 850000
 
 if (totalMassKg <= 850000) {
+    preparedForLiftOff == true
     console.log("Total MassKg is within the Limit!!");
 } else {
+    preparedForLiftOff == false
     console.log("Total MassKg exeeds the Limit!");
 }
 
 // add logic below to verify the fuel temperature is within the appropriate range of -150 and -300
 
-if (fuelTempCelsius >= -150 && fuelTempCelsius <= -300){
+if (fuelTempCelsius >= -300 && fuelTempCelsius <= -150){
+   preparedForLiftOff == true
    console.log("Fuel Temperature is within the Range");
 } else {
+    preparedForLiftOff == false
     console.log("Fuel Temperature is not in Range");
 }
 
 // add logic below to verify the fuel level is at 100%
 
-if (!fuelLevel == "100%") {
-   console.log("Fuel is not in Level!");
+if (fuelLevel == "100%") {
+   preparedForLiftOff == true
+   console.log("FuelLevel is within the range!!!");
 } else {
-    console.log("Fuel Level is within the range!!!");
+    preparedForLiftOff == false
+    console.log("FuelLevel is not in Level!");
 }
 
 // add logic below to verify the weather status is clear
 
-if (!weatherStatus == "Clear") {
-    console.log("Weather Status is not Clear!");
-} else {
+if (weatherStatus == "clear") {
+    preparedForLiftOff == true
     console.log("Weather Status is Clear!!!");
+} else {
+    preparedForLiftOff == false
+    console.log("Weather Status is not Clear!");
 }
 
 // Verify shuttle launch can proceed based on above conditions
 
-if (astronautCount <= 7 && totalMassKg <= 850000 && fuelTempCelsius <= -300 && fuelLevel == "100%" && weatherStatus == "Clear" && preparedForLiftOff == true) {
-    console.log("Shuttle is ready to Launch!!!");
+if (astronautCount <= 7 && astronautStatus === "ready" && totalMassKg <= 850000 && fuelTempCelsius >= -300 && fuelTempCelsius <= -150 && fuelLevel === "100%" && weatherStatus === "clear") {
+    console.log("\nAll systems are a go! Initiating space shuttle launch sequence");
+    console.log("---------------------------------------------------------------");
+    console.log("Date: " + date + "\nTime: " + time + "\nAstronaut Count: " + astronautCount + "\nCrewMassKg: " + crewMassKg);
+    console.log("FuelMassKg: " + fuelMassKg + "\nShuttleMassKg: " + shuttleMassKg + "\nTotalMassKg: " + totalMassKg);
+    console.log("FuelTempCelsius: " +fuelTempCelsius + "\nWeatherStatus: " + weatherStatus);
+    console.log("---------------------------------------------------------------");
+    console.log("Have a safe trip astronauts!")
 } else {
-    console.log("Shuttle is not ready to Launch");
+    console.log("Shut down the launch operations");
 }
