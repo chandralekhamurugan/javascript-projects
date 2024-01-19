@@ -12,6 +12,7 @@ console.log("Initials using method chaining: " + initialschain);
 
 //3. Use bracket notation and a template literal to print, "The abbreviation for 'JavaScript' is 'JS'."
 console.log("The abbrevation for " + language + " is " + initials + ".");
+console.log(`The abbrevation for ${language} is ${initials}.`);
 
 //4. Just for fun, try chaining 3 or more methods together, and then print the result.
 let chaining = (language.slice(0,1).replace("J", "Q").toLowerCase() + language.slice(4,5).replace("S", "A").toLowerCase());
