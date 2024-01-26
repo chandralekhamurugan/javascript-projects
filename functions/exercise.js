@@ -62,31 +62,36 @@ function makeSpaceLine(numSpaces, numChars){
 // calling spaceline function
 console.log(makeSpaceLine(3, 5));
 
-// makeIsoscelesTriangle(height) function
+// 6. makeIsoscelesTriangle(height) function
 function makeIsoscelesTriangle(height){
     let IsoscelesTriangle = "";
     for (let i = 0; i < height; i++){
         IsoscelesTriangle += (makeSpaceLine(height -i-1, 2 * i + 1 ) + "\n");
     }
-    return IsoscelesTriangle
+    return IsoscelesTriangle.slice(0, -1);
 }
 // calling IsoscelesTriangle function
 console.log(makeIsoscelesTriangle(5))
+// console.log("a");
 
-// makeDiamond(height) function
+// 7. makeDiamond(height) function
 function makeDiamond(height){
-    let diamond = "";
-    return diamond += (makeIsoscelesTriangle(height).split("").reverse().join(""));
+    return diamond = (makeIsoscelesTriangle(height).split("").reverse().join(""));
     }    
 
-// 
-// // calling diamond function
+// calling diamond function
 console.log(makeDiamond(5));
 
-// function reverse(diamond){
-//     return diamond.spilt("").reverse().join("");
-
-// }
-// console.log(reverse(makeDiamond));
+// Bonus Mission:
+// makeline(size) function
+function makeLine(size, char = "#"){
+  let line = "";
+  for (let i = 0; i < size; i++){
+    line += char;
+  }
+  return line;
+}
+// calling line function
+console.log(makeLine(5, "$*"));
 
 

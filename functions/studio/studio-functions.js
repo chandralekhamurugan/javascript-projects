@@ -9,6 +9,20 @@
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
 
+// reverseCharacters function
+function reverseCharacters(str){
+    let reversed = str.split("").reverse().join("");
+    return reversed;
+}
+
+//calling function reverseCharacters
+console.log("****************************");
+console.log(reverseCharacters('apple'));
+console.log(reverseCharacters('LC101'));
+console.log(reverseCharacters('Capitalized Letters'));
+console.log(reverseCharacters('I love the smell of code in the morning.', ("\n")));
+
+
 // Part Two: Reverse Digits
 
 // 1. Add an if statement to reverseCharacters to check the typeof the parameter.
@@ -16,6 +30,27 @@
 // 3. If typeof is ’number’, convert the parameter to a string, reverse the characters, then convert it back into a number.
 // 4. Return the reversed number.
 // 5. Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
+
+// reverseCharacters function
+function reverseCharacters(str){
+    let reversed1 = "";
+    if(typeof str === "string"){
+        reversed1 = str.split("").reverse().join("")
+    }
+    if(typeof str === "number"){
+        reversed1 = str.toString().split("").reverse().join("");
+        reversed1 = Number(reversed1);
+    }
+    return reversed1;
+}
+
+//calling reverseCharacters function
+console.log("****************************");
+console.log(reverseCharacters(1234));
+console.log(reverseCharacters('LC101'));
+console.log(reverseCharacters(8675309));
+console.log(reverseCharacters('radar'));
+
 
 // Part Three: Complete Reversal
 
@@ -30,6 +65,20 @@ let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
+//reverseArray function
+function reverseArray(arrayTest){
+    let arr1 = [];
+    for (let i = 0; i < arrayTest.length; i++){
+        arr1.push(reverseCharacters(arrayTest[i]));
+    }
+    return arr1.reverse();
+}
+
+// calling reverseArray function
+console.log("****************************");
+console.log(reverseArray(arrayTest1));
+console.log(reverseArray(arrayTest2));
+console.log(reverseArray(arrayTest3));
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
