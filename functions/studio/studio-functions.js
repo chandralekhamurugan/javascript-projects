@@ -79,6 +79,8 @@ console.log("****************************");
 console.log(reverseArray(arrayTest1));
 console.log(reverseArray(arrayTest2));
 console.log(reverseArray(arrayTest3));
+
+
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
@@ -86,10 +88,28 @@ console.log(reverseArray(arrayTest3));
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
 
+//funPhrase function
+let fun = "Javascript Rocks!!";
+let fun1 = "Smile";
+function funPhrase(str){
+    let newfun = "";
+    if(str.length <= 3){
+        newfun = str.slice(str.length - 1, str.length);
+    }
+    else{
+        newfun = str.slice(0,3);
+    }
+    return `We put the ${newfun} in ${str}`;
+}
+
 // Test Function
 
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
+
+console.log(funPhrase(fun));
+console.log(funPhrase(fun1));
+
 
 // Area of rectangle equal to length x width
 
@@ -98,3 +118,14 @@ console.log(reverseArray(arrayTest3));
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+
+// areaOfRectangle function
+function areaOfRectangle(length, width = length){
+    return area = length * width;
+}
+
+console.log(`The area is ${areaOfRectangle(5, 3)} cm^2.`);
+console.log(`The area is ${areaOfRectangle(9, 18)} cm^2.`);
+console.log(`The area is ${areaOfRectangle(4, 8)} cm^2.`);
+
+
