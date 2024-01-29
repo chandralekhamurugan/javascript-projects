@@ -24,8 +24,9 @@ let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
+
 /* Steal some fuel from the shuttle:
- * /
+ */
  
 //a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
 
@@ -35,8 +36,22 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //d). Decide where to best place your function call to gather our new fuel.
 
+//checkFuelAnanymous function
+let checkFuelAnanymous = function(level1) {
+  if (checkFuel(level1) === "green") {
+    return level1 - 100001;
+  } else if (checkFuel(level1) === "yellow") {
+    return level1 - 50001;
+  }
+  else {
+    return level1;
+  }
+
+}
+console.log("FuelLevel: " + checkFuelAnanymous(fuelLevel));
+
 /* Next, liberate some of that glorious cargo.
- * /
+ */
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
@@ -45,6 +60,28 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //c). The cargo hold has better security than the fuel tanks. It counts how many things are in storage. You need to replace what you steal with something worthless. The count MUST stay the same, or you’ll get caught and thrown into the LaunchCode brig.
 
 //d). Don’t get hasty, matey! Remember to test your function.
+//let cargoHold1 = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
+
+//arrAnanymousFunction function
+let arrAnanymousFunction = function(cargoHold) {
+  // checking there are two items to steal
+  if (cargoHold.length < 2) {
+    return ` Not enough Space: ${2-cargoHold.length}.`;
+  } 
+
+  //choose two items to steal
+  let swipeItems = cargoHold.slice(3, 5);
+  console.log("SwipeItems: " + swipeItems);
+  
+  // replace the stolen items with generic ones
+  let genericItems = ["FancyDress", "Band-aid kit"];
+  cargoHold.splice(3, 2, genericItems);
+  console.log("Updated CargoHold: " + cargoHold);
+  return [`Success in swiping items: ${swipeItems}`];
+};
+
+console.log("Cargohold: " + arrAnanymousFunction(cargoHold));
+
 
 /* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
  * /
@@ -54,4 +91,19 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+
+*/
+
+//calling ananymous function within irs
+let levelOfFuel = checkFuelAnanymous(fuelLevel);
+let itemsInCargo = arrAnanymousFunction(cargoHold);
+
+ //IRS function
+let irs = function(levelOfFuel, itemsInCargo) {
+  
+
+ return `Raided ${levelOfFuel} kg of fuel from the tanks, and stole ${itemsInCargo[1][3]} and ${itemsInCargo[1][4]} from the cargo hold.`
+ }
+ // Printing Receipts    
+ console.log("FuelLevel Receipts: " + irs(fuelLevel, cargoHold));
 
