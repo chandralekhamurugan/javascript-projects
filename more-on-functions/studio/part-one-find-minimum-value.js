@@ -5,6 +5,21 @@ let nums1 = [5, 10, 2, 42];
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
 
-//Using one of the test arrays as the argument, call your function inside the console.log statement below.
+function findMinValue(arr) {
+    let min = arr[0];
+  for (i = 0; i < arr.length; i++){
+    if (arr[i] < min){
+      min = arr[i];
+    }
+  }
+  return min;
+}
+  //Sample arrays for testing:
+let nums1a = [5, 10, 2, 42];
+let nums2b = [-2, 0, -10, -44, 5, 3, 0, 3];
+let nums3c = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
 
-console.log(/* your code here */);
+//Using one of the test arrays as the argument, call your function inside the console.log statement below.
+console.log(findMinValue(nums1a));
+console.log(findMinValue(nums2b));
+console.log(findMinValue(nums3c));
