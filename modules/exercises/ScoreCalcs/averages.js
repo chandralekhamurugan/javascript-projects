@@ -1,3 +1,5 @@
+const input = require('readline-sync');
+
 function averageForStudent(nameIndex,scores){
   let sum = 0;
   for (let i=0; i<scores.length; i++){
@@ -17,3 +19,8 @@ function averageForTest(testIndex,scores){
 }
 
 //TODO: Export all functions within an object.
+module.exports = {
+  averageForStudent: averageForStudent,
+  averageForTest: averageForTest
+  }
+  

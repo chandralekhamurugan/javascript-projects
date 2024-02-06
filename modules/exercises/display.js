@@ -1,8 +1,12 @@
 //TODO: Export ONLY the printAll function.
+module.exports = {
+  printAll: printAll
+};
 
 function printAll(names, tests, scores){
   let header = 'Name';
   let row = '';
+  
 
   for (let i = 0; i<tests.length; i++){
     header += '\t'+tests[i];
